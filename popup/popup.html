@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>YouTube Timestamped Notebook</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 340px;
+      font-family: Roboto, -apple-system, sans-serif;
+      background: #0f0f0f;
+      color: #f1f1f1;
+      padding: 16px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .header h1 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ff0000;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn {
+      background: #ff0000;
+      color: #ffffff;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn:hover { background: #cc0000; }
+    .list { display: flex; flex-direction: column; gap: 8px; max-height: 260px; overflow-y: auto; }
+    .item {
+      background: #1f1f1f;
+      border: 1px solid #2d2d2d;
+      border-radius: 6px;
+      padding: 10px;
+    }
+    .item-title { font-size: 12px; font-weight: 600; color: #ffffff; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .item-meta { display: flex; justify-content: space-between; font-size: 11px; color: #aaaaaa; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>📝 YT Notebook</h1>
+    <button class="btn" id="btn-export">Export Markdown</button>
+  </div>
+  <div class="list" id="notes-list"></div>
+  <script src="popup.js"></script>
+</body>
+</html>

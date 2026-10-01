@@ -1,0 +1,168 @@
+/* YouTube Timestamped Notebook Drawer & Controls */
+.yt-nb-trigger-btn {
+  position: fixed;
+  bottom: 90px;
+  right: 24px;
+  z-index: 9999;
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 22px;
+  background: #ff0000;
+  color: #ffffff;
+  border: none;
+  font-family: "YouTube Sans", Roboto, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(255, 0, 0, 0.4);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease;
+}
+
+.yt-nb-trigger-btn:hover {
+  transform: scale(1.05);
+  background: #cc0000;
+}
+
+.yt-nb-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 380px;
+  max-width: 90vw;
+  height: 100vh;
+  background: #0f0f0f;
+  color: #f1f1f1;
+  border-left: 1px solid #272727;
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.7);
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.yt-nb-drawer.yt-nb-open {
+  transform: translateX(0);
+}
+
+.yt-nb-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #272727;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.yt-nb-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ff0000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.yt-nb-close {
+  background: transparent;
+  border: none;
+  color: #aaaaaa;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.yt-nb-close:hover { color: #ffffff; }
+
+.yt-nb-body {
+  padding: 16px 20px;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.yt-nb-quick-action {
+  display: flex;
+  gap: 8px;
+}
+
+.yt-nb-btn {
+  flex: 1;
+  height: 38px;
+  border-radius: 8px;
+  border: 1px solid #3f3f3f;
+  background: #212121;
+  color: #f1f1f1;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.yt-nb-btn:hover {
+  background: #383838;
+  border-color: #ff0000;
+}
+
+.yt-nb-textarea {
+  width: 100%;
+  height: 110px;
+  background: #181818;
+  border: 1px solid #3f3f3f;
+  border-radius: 8px;
+  color: #ffffff;
+  padding: 10px;
+  font-size: 13px;
+  font-family: inherit;
+  resize: vertical;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.yt-nb-textarea:focus { border-color: #ff0000; }
+
+.yt-nb-notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.yt-nb-note-item {
+  background: #1f1f1f;
+  border: 1px solid #2d2d2d;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.yt-nb-note-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.yt-nb-timestamp-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ff4e4e;
+  background: rgba(255, 0, 0, 0.15);
+  padding: 2px 8px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.yt-nb-note-text {
+  font-size: 12px;
+  color: #cccccc;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
